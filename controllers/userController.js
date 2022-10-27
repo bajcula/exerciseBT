@@ -144,7 +144,7 @@ router.post('/spend', async(req, res)=>{
                                     // tricky part
                                     console.log("3", user.dannonPoints)
                                     pointsToSubstract -= user.transactionsArr[i].points
-                                    user[payerMap[user.transactionsArr[i].payer]] -= user.transactionsArr[i].points
+                                    // user[payerMap[user.transactionsArr[i].payer]] -= user.transactionsArr[i].points
                                     user.transactionsArr[i].points = 0
                                     console.log("4", user.dannonPoints)
                                 }
@@ -163,25 +163,26 @@ router.post('/spend', async(req, res)=>{
             let totalPointsToSpend = req.body.points
             let currSpentPointsIdx = 0
             console.log("1", user.transactionsArr)
-           
             while (totalPointsToSpend > 0) {
+                console.log("1", user.dannonPoints)
                 if (user.transactionsArr[currSpentPointsIdx].points > totalPointsToSpend) {
                     user.transactionsArr[currSpentPointsIdx].points -= totalPointsToSpend
                     user[payerMap[user.transactionsArr[currSpentPointsIdx].payer]] -= totalPointsToSpend
                     totalPointsToSpend = 0
-                    
+                    console.log("3", user.dannonPoints)
                 } else {
                     user[payerMap[user.transactionsArr[currSpentPointsIdx].payer]] -= user.transactionsArr[currSpentPointsIdx].points
                     totalPointsToSpend -= user.transactionsArr[currSpentPointsIdx].points
                     user.transactionsArr[currSpentPointsIdx].points = 0
                     currSpentPointsIdx++
+                    console.log("4", user.dannonPoints)
                     
                 }
             }
             
-            console.log("2", user.transactionsArr)
+            console.log("2", user.dannonPoints)
             getRidOffZeroEntries()
-            console.log("3", user.transactionsArr)
+            console.log("3", user.dannonPoints)
 
             spentDanon -= user.dannonPoints
             spentMillerCoors -= user.millerCoorsPoints
