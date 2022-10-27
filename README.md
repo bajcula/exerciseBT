@@ -4,7 +4,11 @@
 
 ---
 
+---
+
 ### Routes:
+
+---
 
 ##### check balance
 
@@ -24,6 +28,8 @@
 
 ---
 
+---
+
 ##### If you wish to use it please run following commands:
 
 ```
@@ -40,4 +46,6 @@ $ npm start
 
 ##### Use Postman, Thunder Client or any other source for testing.
 
-###### Thank you.
+---
+
+#### Thank you.
