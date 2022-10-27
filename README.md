@@ -2,19 +2,27 @@
 
 ### Users can earn points for various transactions, spend those points in chronological order, as well as check their account balance.
 
+---
+
 ### Routes:
 
 ##### check balance
 
 #### /user/check
 
+---
+
 ##### add transaction which earns points
 
 #### /user/earn
 
+---
+
 ##### spend available points
 
 #### /user/spend
+
+---
 
 ##### If you wish to use it please run following commands:
 
